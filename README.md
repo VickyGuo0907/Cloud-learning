@@ -2,7 +2,7 @@
 
 This is my learning related Cloud, OpenShift, AWS
 
-![github pages](https://github.com/VickyGuo0907/learning-memo/workflows/github%20pages/badge.svg?branch=master)
+![gitpage deployment](https://github.com/VickyGuo0907/cloud-learning/workflows/CI%20github%20pages/badge.svg?branch=main)
 
 ## Overview
 
