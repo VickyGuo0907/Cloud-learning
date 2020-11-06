@@ -17,6 +17,10 @@ edit_uri: edit/master/docs/
 plugins:
   - search
 
+# Launch external urls in separate tab
+extra_javascript:
+  - js/links_in_new_tabs.js
+
 markdown_extensions:
   - admonition
   - codehilite
@@ -25,7 +29,7 @@ markdown_extensions:
   - toc:
       permalink: True
   - attr_list
-
+  
 #Page tree
 nav:
   - Home: index.md
