@@ -1,0 +1,43 @@
+site_name: My Learning Collection Site
+site_description: Learning Materials
+site_author: 'Danny Guo'
+
+theme:
+  name: 'material'
+
+
+copyright: 'Copyright &copy; 2020 Danny Guo'
+
+repo_name: 'GitHub'
+docs_dir: docs/
+repo_url: https://github.com/VickyGuo0907/learning-memo
+edit_uri: edit/master/docs/
+
+# Plugins
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - smarty
+  - meta
+  - toc:
+      permalink: True
+  - attr_list
+
+#Page tree
+nav:
+  - Home: index.md
+  - Cloud Concept:
+    - Ingress: cloud/ingress-concept.md
+    - Kubernetes Probe: cloud/probe-concept.md
+  - Amazon AWS:
+    - AWS Concept: aws/aws-concept.md
+  - OpenShift: 
+    - OpenShift Concept: openshift/openshift-concept.md
+  - Useful Command:
+      - Linux Shell: useful-command/linux-shell.md
+      - Docker Command: useful-command/docker.md
+      - Helm command: useful-command/helm.md
+      - Cloud Related Command: useful-command/cloud-command.md
