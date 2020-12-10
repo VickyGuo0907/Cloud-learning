@@ -34,6 +34,7 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Cloud Concept:
+    - k8s Core: cloud/core-concept.md
     - Ingress: cloud/ingress-concept.md
     - Kubernetes Probe: cloud/probe-concept.md
   - AWS Certified Developer:

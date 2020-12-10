@@ -22,9 +22,8 @@ All the probe have the following parameters:
 ***Liveness probes are used to restart unhealthy containers.*** The kubelet periodically pings the liveness probe, determines the health, and kills the pod if it fails the liveness check. Liveness checks can help the application recover from a deadlock situation. Without liveness checks, Kubernetes deems a deadlocked pod healthy since the underlying process continues to run from Kubernetes’s perspective. By configuring the liveness probe, the kubelet can detect that the application is in a bad state and restarts the pod to restore availability.
 
 ![zoomify](imgs/liveness_probe.gif)<br></br>
-***Reference: GCP Blog***
-
- ***Image Credit: GCP Blog***
+***Reference: GCP Blog & Image Credit: GCP Blog***
 
 ### **Startup Probes**
 
+***Startup probes are similar to readiness probes but only executed at startup.*** They are optimized for slow starting containers or applications with unpredictable initialization processes.
