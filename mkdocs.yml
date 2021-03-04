@@ -40,6 +40,7 @@ nav:
   - AWS Certified Developer:
     - Chapter 1: aws-acd/chapter-1.md
     - Chapter 2: aws-acd/chapter-2.md
+    - Chapter 4: aws-acd/chapter-4.md
   - AWS Solutions Architecture Certification: 
     - Solutions Architecture resource: aws-saa/aws-saa-certification.md
   - OpenShift: 
