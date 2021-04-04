@@ -112,3 +112,25 @@ but once it is enabled, it cannot be removed but only suspended.
 
 ### Amazon DynamoDB
 
+* The MySQL, MariaDB, and PostgreSQL engines all have similar general characteristics and support highly available Multi-AZ deployment topologies with a synchronous master/slave pair across two availability zones. All of them also have the ability to deploy multiple read replicas in the same region or in another region.
+
+### Secondary Indexes
+
+* **Local secondary index (LSI)**: The LSI can be considered an additional sort key for sifting through multiple entries of a certain primary key. This is very useful in applications where two ranges (the sort key and the secondary index) are required to retrieve the correct dataset. The LSI consumes some of the provisioned capacity of the table and can thus impact your performance calculations in case it is created.
+
+* **Global secondary index (GSI)**: The GSI can be considered an additional primary key on which the data can be accessed. The GSI allows you to pivot a table and access the data through the key defined in the GSI and get a different view of the data. The GSI has its own provisioned read and write capacity units that can be set completely independently of the capacity units provisioned for the table
+
+### Planning for DynamoDB Capacity
+
+* When calculating capacities, you need to set both the read capacity units (RCUs) and write capacity units (WCUs):
+
+    1. One RCU represents one strongly consistent 4 KB or two eventually consistent 4 KB reads.
+
+    2. One WCU represents one write request of up to 1 KB in size.
+
+
+## CACHING DATA IN AWS
+
+### Amazon ElastiCache
+
+* ElastiCache is a managed service that helps simplify the deployment of in-memory data stores in AWS.
