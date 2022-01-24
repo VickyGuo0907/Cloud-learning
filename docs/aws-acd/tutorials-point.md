@@ -34,10 +34,29 @@ By default, **AWS Lambda limits the total concurrent executions across all funct
 
 * In the Invoke API, you have 3 options to choose from for the InvocationType:
 
-    1. **RequestResponse (default)** – Invoke the function synchronously. Keep the connection open until the function returns a response or times out. The API response includes the function response and additional data.
+    1. **RequestResponse (default)** – Invoke the function **synchronously**. Keep the connection open until the function returns a response or times out. The API response includes the function response and additional data.
 
-    2. **Event** – Invoke the function asynchronously. Send events that fail multiple times to the function’s dead-letter queue (if it’s configured). The API response only includes a status code.
+    ```
+    aws lambda invoke --function-name my-function --payload '{ "key": "value" }' 
+    response.json 
+    { 
+            "ExecutedVersion": "$LATEST", 
+            "StatusCode": 200 
+    }
 
+    ```
+    
+    2. **Event** – Invoke the function **asynchronously**. Send events that fail multiple times to the function’s dead-letter queue (if it’s configured). The API response only includes a status code.
+
+    ```
+    aws lambda invoke --function-name my-function --invocation-type Event --payload '{ "key": "value" }' 
+    response.json
+    {
+    "StatusCode": 202
+    }
+
+    ```
+    
     3. **DryRun** – Validate parameter values and verify that the user or role has permission to invoke the function.
 
 *  For a Lambda function, you can have two types of integration:
@@ -157,6 +176,14 @@ You can configure one or more cache behaviors in your CloudFront distribution to
     3. `x-amz-server-side​-encryption​-customer-key-MD5`
 
 * since the `put-bucket-policy` command can only be used to apply policy at the bucket level, not on objects. **You can use S3 Access Control Lists (ACLs) instead to manage permissions of S3 objects.**
+
+* To enable the CRR(cross-region replication)  feature in S3, the following items should be met:
+
+    1. The source and destination buckets must have versioning enabled.
+
+    2. The source and destination buckets must be in different AWS Regions.
+
+    3. Amazon S3 must have permissions to replicate objects from that source bucket to the destination bucket on your behalf.
 
 ## AWS CodeCommit
 
@@ -335,6 +362,19 @@ You can configure one or more cache behaviors in your CloudFront distribution to
 
 [AWS IAM Cheat Sheet](https://tutorialsdojo.com/aws-identity-and-access-management-iam/)
 
+* Below is the summary of the available STS API:
+
+    1. **AssumeRole** –  is useful for allowing existing IAM users to access AWS resources that they don’t already have access to. For example, the user might need access to resources in another AWS account. It is also useful as a means to temporarily gain privileged access—for example, to provide multi-factor authentication (MFA). You must call this API using existing IAM user credentials.
+
+    2. **AssumeRoleWithWebIdentity** – returns a set of temporary security credentials for federated users who are authenticated through a public identity provider. Examples of public identity providers include Login with Amazon, Facebook, Google, or any OpenID Connect (OIDC)-compatible identity provider.
+
+    3. **AssumeRoleWithSAML** –  returns a set of temporary security credentials for federated users who are authenticated by your organization’s existing identity system. The users must also use SAML 2.0 (Security Assertion Markup Language) to pass authentication and authorization information to AWS. This API operation is useful in organizations that have integrated their identity systems (such as Windows Active Directory or OpenLDAP) with software that can produce SAML assertions.
+
+    4. **GetFederationToken** – returns a set of temporary security credentials (consisting of an access key ID, a secret access key, and a security token) for a federated user. A typical use is in a proxy application that gets temporary security credentials on behalf of distributed applications inside a corporate network. You must call the GetFederationToken operation using the long-term security credentials of an IAM user.
+
+    5. **GetSessionToken** – returns a set of temporary security credentials to an existing IAM user. This is useful for providing enhanced security, such as allowing AWS requests only when MFA is enabled for the IAM user. Because the credentials are temporary, they provide enhanced security when you have an IAM user who accesses your resources through a less secure environment.
+
+
 
 ## Amazon QuickSight
 
@@ -361,6 +401,33 @@ You can configure one or more cache behaviors in your CloudFront distribution to
 * **Application Load Balancers** provide two advanced options that you may want to configure when you use ALBs with AWS Lambda: 
     1. support for multi-value headers 
     2. health check configurations. 
+
+## AWS Step Functions
+
+[AWS Step Functions Cheat Sheet](https://tutorialsdojo.com/aws-step-functions/)
+
+* **States can perform a variety of functions in your state machine:**
+
+    1. Task State – Do some work in your state machine
+    2. Choice State – Make a choice between branches of execution
+    3. Fail or Succeed State – Stop execution with failure or success
+    4. Pass State – Simply pass its input to its output or inject some fixed data, without performing work.
+    5. Wait State – Provide a delay for a certain amount of time or until a specified time/date.
+    6. Parallel State – Begin parallel branches of execution.
+    7. Map State – Dynamically iterate steps.
+
+## AWS S3 Glacier 
+
+[Amazon S3 Glacier Cheat Sheet](https://tutorialsdojo.com/amazon-glacier/)
+
+* There are three options for retrieving data with varying access times and cost:
+
+  1.  **Standard retrievals** allow you to access any of your archives within several hours. Standard retrievals typically complete within 3–5 hours. This is the default option.
+
+  2. **Bulk retrievals** are Glacier’s lowest-cost retrieval option, which you can use to retrieve large amounts, even petabytes, of data inexpensively in a day. Bulk retrievals typically complete within 5–12 hours.
+
+  3. **Expedited retrievals** allow you to quickly access your data when occasional urgent requests for a subset of archives are required. Expedited retrievals are typically made available within 1–5 minutes.
+
 
 ## Comparison of AWS Services
 
@@ -420,3 +487,19 @@ You can configure one or more cache behaviors in your CloudFront distribution to
     2. You need to run large nodes with multiple cores or threads.
     3. You need the ability to scale out and in, adding and removing nodes as demand on your system increases and decreases.
     3. You need to cache objects, such as a database.
+
+## Amazon Kinesis Data Firehose
+
+Amazon Kinesis Data Firehose is the easiest way to load streaming data into data stores and analytics tools. It can capture, transform, and load streaming data into Amazon S3, Amazon Redshift, Amazon Elasticsearch Service, and Splunk, enabling near real-time analytics with existing business intelligence tools and dashboards you’re already using today.
+
+## AWS Step Functions
+
+AWS Step Functions is a web service that enables you to coordinate the components of distributed applications and microservices using visual workflows. You build applications from individual components that each perform a discrete function, or task, allowing you to scale and change applications quickly.
+
+The following are key features of AWS Step Functions:
+
+* Step Functions is based on the concepts of tasks and state machines.
+
+* You define state machines using the JSON-based Amazon States Language.
+
+* The Step Functions console displays a graphical view of your state machine's structure. This provides a way to visually check your state machine's logic and monitor executions.
