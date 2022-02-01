@@ -1,4 +1,4 @@
-# Chapter 1
+# Chapter 1 Overview of AWS
 
 ## QUIZ
 
@@ -223,6 +223,21 @@ There are many types of data, and for each type you need to choose the right sto
 * ***AWS Storage Gateway***: This hybrid storage solution exposes AWS as a storage back end to your on-premises servers.
 
 * ***AWS SnowBall and SnowMobile***: These data transfer devices allow for physically moving data from on premises to the cloud at any scale
+
+
+## Quiz Answer
+
+1. C. Application agility
+2. B. Securing the hpervisor
+3. B. S3
+4. D.Only when an RDS database has replicas in two availability zones.
+5. A. All calls to AWS are API calls, regardless of the access method.
+6. D. EC2
+7. A. Creating and managing SSH keys 
+   C. Enabling HTTPS on the Apache server
+8. C. Compute, networking, and storage solutions as a service
+9. D. An IAM-generated secret key and an access key ID
+10. C. A datacenter
 
 ## Q & A
 
