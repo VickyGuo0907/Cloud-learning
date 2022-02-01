@@ -1,0 +1,1612 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Learning Materials">
+      
+      
+        <meta name="author" content="Danny Guo">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.9">
+    
+    
+      
+        <title>Linux Shell - Cloud Learning Collection Site</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2b4465f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#linux-shell-script" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Cloud Learning Collection Site" class="md-header__button md-logo" aria-label="Cloud Learning Collection Site" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Cloud Learning Collection Site
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Linux Shell
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/VickyGuo0907/learning-memo/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Cloud Learning Collection Site" class="md-nav__button md-logo" aria-label="Cloud Learning Collection Site" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Cloud Learning Collection Site
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/VickyGuo0907/learning-memo/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Cloud Concept
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Cloud Concept" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Cloud Concept
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cloud/core-concept/" class="md-nav__link">
+        k8s Core
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cloud/ingress-concept/" class="md-nav__link">
+        Ingress
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cloud/probe-concept/" class="md-nav__link">
+        Kubernetes Probe
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          AWS Certified Developer
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="AWS Certified Developer" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          AWS Certified Developer
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aws-acd/" class="md-nav__link">
+        Book Home
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aws-acd/chapter-1/" class="md-nav__link">
+        Chapter 1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aws-acd/chapter-2/" class="md-nav__link">
+        Chapter 2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aws-acd/chapter-3/" class="md-nav__link">
+        Chapter 3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aws-acd/chapter-4/" class="md-nav__link">
+        Chapter 4
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aws-acd/tutorials-point/" class="md-nav__link">
+        Tutorials Test
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          AWS Solutions Architecture Certification
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="AWS Solutions Architecture Certification" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          AWS Solutions Architecture Certification
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aws-saa/aws-saa-certification/" class="md-nav__link">
+        Solutions Architecture resource
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          OpenShift
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="OpenShift" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          OpenShift
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../openshift/openshift-concept/" class="md-nav__link">
+        OpenShift Concept
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Useful Command
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Useful Command" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Useful Command
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Linux Shell
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Linux Shell
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#essential-toolkit" class="md-nav__link">
+    Essential Toolkit
+  </a>
+  
+    <nav class="md-nav" aria-label="Essential Toolkit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-alias" class="md-nav__link">
+    1. alias
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-cat" class="md-nav__link">
+    2. cat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-chmod" class="md-nav__link">
+    3. chmod
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-chown" class="md-nav__link">
+    4. chown
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-curl" class="md-nav__link">
+    5. curl
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-df" class="md-nav__link">
+    6. df
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-diff" class="md-nav__link">
+    7. diff
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-echo" class="md-nav__link">
+    8. echo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-find" class="md-nav__link">
+    9. find
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-finger" class="md-nav__link">
+    10. finger
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-free" class="md-nav__link">
+    11. free
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-grep" class="md-nav__link">
+    12. grep
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-groups" class="md-nav__link">
+    13. groups
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-gzip" class="md-nav__link">
+    14. gzip
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-head" class="md-nav__link">
+    15. head
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16-history" class="md-nav__link">
+    16. history
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17-kill" class="md-nav__link">
+    17. kill
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#18-less" class="md-nav__link">
+    18. less
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#19-ls" class="md-nav__link">
+    19. ls
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#20-man" class="md-nav__link">
+    20. man
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#21-tree" class="md-nav__link">
+    21. tree
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-mkdir" class="md-nav__link">
+    22. mkdir
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-mv" class="md-nav__link">
+    23. mv
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-passwd" class="md-nav__link">
+    24. passwd
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-ping" class="md-nav__link">
+    25. ping
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-ps" class="md-nav__link">
+    26. ps
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#27-pwd" class="md-nav__link">
+    27. pwd
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#28-shutdown" class="md-nav__link">
+    28. shutdown
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#29-ssh" class="md-nav__link">
+    29. SSH
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#30-sudo" class="md-nav__link">
+    30. sudo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#31-tail" class="md-nav__link">
+    31. tail
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-tar" class="md-nav__link">
+    32. tar
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-whoami-or-w" class="md-nav__link">
+    33. whoami or w
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-top" class="md-nav__link">
+    34. top
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-uname" class="md-nav__link">
+    35. uname
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36-hostname" class="md-nav__link">
+    36. hostname
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#37-du" class="md-nav__link">
+    37. du
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker/" class="md-nav__link">
+        Docker Command
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../helm/" class="md-nav__link">
+        Helm command
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cloud-command/" class="md-nav__link">
+        Cloud Related Command
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#essential-toolkit" class="md-nav__link">
+    Essential Toolkit
+  </a>
+  
+    <nav class="md-nav" aria-label="Essential Toolkit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-alias" class="md-nav__link">
+    1. alias
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-cat" class="md-nav__link">
+    2. cat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-chmod" class="md-nav__link">
+    3. chmod
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-chown" class="md-nav__link">
+    4. chown
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-curl" class="md-nav__link">
+    5. curl
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-df" class="md-nav__link">
+    6. df
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-diff" class="md-nav__link">
+    7. diff
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-echo" class="md-nav__link">
+    8. echo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-find" class="md-nav__link">
+    9. find
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-finger" class="md-nav__link">
+    10. finger
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-free" class="md-nav__link">
+    11. free
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-grep" class="md-nav__link">
+    12. grep
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-groups" class="md-nav__link">
+    13. groups
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-gzip" class="md-nav__link">
+    14. gzip
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-head" class="md-nav__link">
+    15. head
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16-history" class="md-nav__link">
+    16. history
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17-kill" class="md-nav__link">
+    17. kill
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#18-less" class="md-nav__link">
+    18. less
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#19-ls" class="md-nav__link">
+    19. ls
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#20-man" class="md-nav__link">
+    20. man
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#21-tree" class="md-nav__link">
+    21. tree
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-mkdir" class="md-nav__link">
+    22. mkdir
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-mv" class="md-nav__link">
+    23. mv
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-passwd" class="md-nav__link">
+    24. passwd
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-ping" class="md-nav__link">
+    25. ping
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-ps" class="md-nav__link">
+    26. ps
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#27-pwd" class="md-nav__link">
+    27. pwd
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#28-shutdown" class="md-nav__link">
+    28. shutdown
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#29-ssh" class="md-nav__link">
+    29. SSH
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#30-sudo" class="md-nav__link">
+    30. sudo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#31-tail" class="md-nav__link">
+    31. tail
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-tar" class="md-nav__link">
+    32. tar
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-whoami-or-w" class="md-nav__link">
+    33. whoami or w
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-top" class="md-nav__link">
+    34. top
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-uname" class="md-nav__link">
+    35. uname
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36-hostname" class="md-nav__link">
+    36. hostname
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#37-du" class="md-nav__link">
+    37. du
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+<a href="https://github.com/VickyGuo0907/learning-memo/edit/master/docs/useful-command/linux-shell.md" title="Edit this page" class="md-content__button md-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+</a>
+
+
+<h1 id="linux-shell-script">Linux Shell Script<a class="headerlink" href="#linux-shell-script" title="Permanent link">&para;</a></h1>
+<h2 id="essential-toolkit">Essential Toolkit<a class="headerlink" href="#essential-toolkit" title="Permanent link">&para;</a></h2>
+<h3 id="1-alias">1. alias<a class="headerlink" href="#1-alias" title="Permanent link">&para;</a></h3>
+<p>The alias command lets you give your own name to a command or sequence of commands. You can then type your short name, and the shell will execute the command or sequence of commands for you.</p>
+<div class="codehilite"><pre><span></span><code>alias cls=clear
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code># <span class="nv">create</span> <span class="nv">alias</span> <span class="nv">allow</span> <span class="nv">to</span> <span class="nv">find</span> <span class="nv">process</span> <span class="nv">ID</span> <span class="ss">(</span><span class="nv">PID</span><span class="ss">)</span>
+# <span class="k">then</span> <span class="nv">pipes</span> <span class="nv">them</span> <span class="nv">through</span> <span class="nv">grep</span> <span class="nv">command</span>
+<span class="nv">alias</span> <span class="nv">pf</span><span class="o">=</span><span class="s2">&quot;</span><span class="s">ps -e | grep $1</span><span class="s2">&quot;</span>
+</code></pre></div>
+
+<h3 id="2-cat">2. cat<a class="headerlink" href="#2-cat" title="Permanent link">&para;</a></h3>
+<p>The cat command (short for “concatenate”) lists the contents of files to the terminal window.</p>
+<div class="codehilite"><pre><span></span><code>cat .bash_logout
+</code></pre></div>
+
+<p>With files longer than the number of lines in your terminal window, the text will whip past too fast for you to read. You can pipe the output from cat through less to make the process more manageable.  With less you can scroll forward and backward through the file using the Up and Down Arrow keys, the PgUp and PgDn keys, and the Home and End keys. Type q to quit from less.</p>
+<div class="codehilite"><pre><span></span><code>cat .bashrc | less
+</code></pre></div>
+
+<h3 id="3-chmod">3. chmod<a class="headerlink" href="#3-chmod" title="Permanent link">&para;</a></h3>
+<p>The chmod command sets the file permissions flags on a file or folder. The flags define who can read, write to or execute the file. </p>
+<div class="codehilite"><pre><span></span><code>#-owner|group|others
+-rwxrwxrwx
+</code></pre></div>
+
+<p><strong>If the first character is a - the item is a file, if it is a d the item is a directory.</strong> The rest of the string is three sets of three characters. From the left, the first three represent the file permissions of the <strong>owner</strong>, the middle three represent the file permissions of the <strong>group</strong> and the rightmost three characters represent the permissions for <strong>others</strong>. In each set, an r stands for read, a w stands for write, and an x stands for execute.</p>
+<p>One way to use chmod is to provide the permissions you wish to give to the owner, group, and others as a 3 digit number.  The leftmost digit represents the owner. The middle digit represents the group. The rightmost digit represents the others. The digits you can use and what they represent are listed here:</p>
+<div class="codehilite"><pre><span></span><code><span class="mi">0</span><span class="o">:</span><span class="w"> </span><span class="n">No</span><span class="w"> </span><span class="n">permission</span><span class="w"></span>
+<span class="mi">1</span><span class="o">:</span><span class="w"> </span><span class="n">Execute</span><span class="w"> </span><span class="n">permission</span><span class="w"></span>
+<span class="mi">2</span><span class="o">:</span><span class="w"> </span><span class="n">Write</span><span class="w"> </span><span class="n">permission</span><span class="w"></span>
+<span class="mi">3</span><span class="o">:</span><span class="w"> </span><span class="n">Write</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">execute</span><span class="w"> </span><span class="n">permissions</span><span class="w"></span>
+<span class="mi">4</span><span class="o">:</span><span class="w"> </span><span class="n">Read</span><span class="w"> </span><span class="n">permission</span><span class="w"></span>
+<span class="mi">5</span><span class="o">:</span><span class="w"> </span><span class="n">Read</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">execute</span><span class="w"> </span><span class="n">permissions</span><span class="w"></span>
+<span class="mi">6</span><span class="o">:</span><span class="w"> </span><span class="n">Read</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">write</span><span class="w"> </span><span class="n">permissions</span><span class="w"></span>
+<span class="mi">7</span><span class="o">:</span><span class="w"> </span><span class="n">Read</span><span class="o">,</span><span class="w"> </span><span class="n">write</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">execute</span><span class="w"> </span><span class="n">permissions</span><span class="w"></span>
+
+<span class="n">chmod</span><span class="w"> </span><span class="o">-</span><span class="n">R</span><span class="w"> </span><span class="mi">765</span><span class="w"> </span><span class="n">example</span><span class="o">.</span><span class="na">txt</span><span class="w"></span>
+</code></pre></div>
+
+<h3 id="4-chown">4. chown<a class="headerlink" href="#4-chown" title="Permanent link">&para;</a></h3>
+<p>The chown command allows you to change the owner and group owner of a file. You can use chown to change the owner or group, or both of a file. You must provide the name of the owner and the group, separated by a : character. You will need to use sudo. To retain dave as the owner of the file but to set mary as the group owner, use this command:</p>
+<div class="codehilite"><pre><span></span><code>sudo chown dave:mary example.txt
+</code></pre></div>
+
+<h3 id="5-curl">5. curl<a class="headerlink" href="#5-curl" title="Permanent link">&para;</a></h3>
+<p>The curl command is a tool to retrieve information and files from Uniform Resource Locators (URLs) or internet addresses.</p>
+<p>The curl command may not be provided as a standard part of your Linux distribution. Use apt-get to install this package onto your system if you’re using Ubuntu or another Debian-based distribution. On other Linux distributions, use your Linux distribution’s package management tool instead.</p>
+<div class="codehilite"><pre><span></span><code>sudo apt-get install curl
+</code></pre></div>
+
+<p>This command retrieves the file for us. Note that you need to specify the name of the file to save it in, using the -o (output) option. If you do not do this, the contents of the file are scrolled rapidly in the terminal window but not saved to your computer.</p>
+<div class="codehilite"><pre><span></span><code>curl https://raw.githubusercontent.com/torvalds/linux/master/kernel/events/core.c -o core.c
+</code></pre></div>
+
+<p>test web site request in container</p>
+<div class="codehilite"><pre><span></span><code>curl https://google.com
+</code></pre></div>
+
+<h3 id="6-df">6. df<a class="headerlink" href="#6-df" title="Permanent link">&para;</a></h3>
+<p>The df command shows the size, used space, and available space on the mounted filesystems of your computer.</p>
+<p>Two of the most useful options are the -h (human readable) and -x (exclude) options. The human-readable option displays the sizes in Mb or Gb instead of in bytes.</p>
+<div class="codehilite"><pre><span></span><code>df -h -x squashfs
+</code></pre></div>
+
+<h3 id="7-diff">7. diff<a class="headerlink" href="#7-diff" title="Permanent link">&para;</a></h3>
+<p>The diff command compares two text files and shows the differences between them. There are many options to tailor the display to your requirements.</p>
+<p>The -y (side by side) option shows the line differences side by side. The -w (width) option lets you specify the maximum line width to use to avoid wraparound lines. The two files are called alpha1.txt and alpha2.txt in this example. The &ndash;suppress-common-lines prevents diff from listing the matching lines, letting you focus on the lines which have differences.</p>
+<div class="codehilite"><pre><span></span><code><span class="gh">diff -y -W 70 alpha1.txt alpha2.txt --suppress-common-lines</span><span class="w"></span>
+</code></pre></div>
+
+<h3 id="8-echo">8. echo<a class="headerlink" href="#8-echo" title="Permanent link">&para;</a></h3>
+<p>The echo command prints (echoes) a string of text to the terminal window.</p>
+<div class="codehilite"><pre><span></span><code>echo $USER
+echo $HOME
+echo $PATH
+</code></pre></div>
+
+<h3 id="9-find">9. find<a class="headerlink" href="#9-find" title="Permanent link">&para;</a></h3>
+<p>Use the find command to track down files that you know exist if you can’t remember where you put them.</p>
+<div class="codehilite"><pre><span></span><code>find . -name *ones*
+</code></pre></div>
+
+<p>We do this using the -type option with the f parameter. The f parameter stands for files.</p>
+<div class="codehilite"><pre><span></span><code>find . -type f -name *ones*
+</code></pre></div>
+
+<p>If you want the search to be case insensitive use the -iname (insensitive name) option.</p>
+<div class="codehilite"><pre><span></span><code>find . -iname *wild*
+</code></pre></div>
+
+<h3 id="10-finger">10. finger<a class="headerlink" href="#10-finger" title="Permanent link">&para;</a></h3>
+<p>The finger command gives you a short dump of information about a user, including the time of the user’s last login, the user’s home directory, and the user account’s full name.</p>
+<div class="codehilite"><pre><span></span><code>finger $USER
+</code></pre></div>
+
+<h3 id="11-free">11. free<a class="headerlink" href="#11-free" title="Permanent link">&para;</a></h3>
+<p>The free command gives you a summary of the memory usage with your computer. It does this for both the main Random Access Memory (RAM) and swap memory. The -h (human) option is used to provide human-friendly numbers and units. Without this option, the figures are presented in bytes.</p>
+<div class="codehilite"><pre><span></span><code>free -h
+</code></pre></div>
+
+<h3 id="12-grep">12. grep<a class="headerlink" href="#12-grep" title="Permanent link">&para;</a></h3>
+<p>The grep utility searches for lines which contain a search pattern. When we looked at the alias command, we used grep to search through the output of another program, ps . The grep command can also search the contents of files. Here we’re searching for the word “train” in all text files in the current directory.</p>
+<div class="codehilite"><pre><span></span><code>grep train *.txt
+</code></pre></div>
+
+<h3 id="13-groups">13. groups<a class="headerlink" href="#13-groups" title="Permanent link">&para;</a></h3>
+<p>The groups command tells you which groups a user is a member of.</p>
+<div class="codehilite"><pre><span></span><code>groups mary
+</code></pre></div>
+
+<h3 id="14-gzip">14. gzip<a class="headerlink" href="#14-gzip" title="Permanent link">&para;</a></h3>
+<p>The gzip command compresses files. By default, it removes the original file and leaves you with the compressed version. To retain both the original and the compressed version, use the -k (keep) option.</p>
+<div class="codehilite"><pre><span></span><code>gzip -k core.c
+</code></pre></div>
+
+<h3 id="15-head">15. head<a class="headerlink" href="#15-head" title="Permanent link">&para;</a></h3>
+<p>The head command gives you a listing of the first 10 lines of a file. If you want to see fewer or more lines, use the -n (number) option. In this example, we use head with its default of 10 lines. We then repeat the command asking for only five lines.</p>
+<div class="codehilite"><pre><span></span><code>head -core.c
+head -n 5 core.c
+</code></pre></div>
+
+<h3 id="16-history">16. history<a class="headerlink" href="#16-history" title="Permanent link">&para;</a></h3>
+<p>The history command lists the commands you have previously issued on the command line. You can repeat any of the commands from your history by typing an exclamation point ! and the number of the command from the history list.</p>
+<div class="codehilite"><pre><span></span><code><span class="n">history</span><span class="w"></span>
+
+<span class="s">#</span><span class="w"> </span><span class="s">pick</span><span class="w"> </span><span class="s">the</span><span class="w"> </span><span class="s">number</span><span class="w"></span>
+<span class="sx">!199</span><span class="w"></span>
+</code></pre></div>
+
+<h3 id="17-kill">17. kill<a class="headerlink" href="#17-kill" title="Permanent link">&para;</a></h3>
+<p>The kill command allows you to terminate a process from the command line. You do this by providing the process ID (PID) of the process to kill. Don’t kill processes willy-nilly. You need to have a good reason to do so. In this example, we’ll pretend the shutter program has locked up.</p>
+<div class="codehilite"><pre><span></span><code># Find PID first
+ps -e | grep shutter.
+
+kill 1692
+</code></pre></div>
+
+<h3 id="18-less">18. less<a class="headerlink" href="#18-less" title="Permanent link">&para;</a></h3>
+<p>The less command allows you to view files without opening an editor. It’s faster to use, and there’s no chance of you inadvertently modifying the file. With less you can scroll forward and backward through the file using the Up and Down Arrow keys, the PgUp and PgDn keys and the Home and End keys. Press the Q key to quit from less.</p>
+<div class="codehilite"><pre><span></span><code>less core.c
+</code></pre></div>
+
+<p>You can also pipe the output from other commands into less. To see the output from ls for a listing of your entire hard drive, use the following command:</p>
+<div class="codehilite"><pre><span></span><code>ls -R / | less
+</code></pre></div>
+
+<h3 id="19-ls">19. ls<a class="headerlink" href="#19-ls" title="Permanent link">&para;</a></h3>
+<p>more details check <a href="https://man7.org/linux/man-pages/man1/ls.1.html">man page</a></p>
+<div class="codehilite"><pre><span></span><code># <span class="nv">use</span> <span class="nv">the</span> <span class="o">-</span><span class="nv">l</span> <span class="ss">(</span><span class="nv">long</span><span class="ss">)</span> <span class="nv">option</span>
+<span class="nv">ls</span> <span class="o">-</span><span class="nv">l</span>
+
+# <span class="nv">To</span> <span class="nv">use</span> <span class="nv">human</span><span class="o">-</span><span class="nv">friendly</span> <span class="nv">file</span> <span class="nv">sizes</span> <span class="k">include</span> <span class="nv">the</span> <span class="o">-</span><span class="nv">h</span> <span class="ss">(</span><span class="nv">human</span><span class="ss">)</span> <span class="nv">option</span>
+<span class="nv">ls</span> <span class="o">-</span><span class="nv">lh</span>
+
+# <span class="nv">To</span> <span class="k">include</span> <span class="nv">hidden</span> <span class="nv">files</span> <span class="nv">use</span> <span class="nv">the</span> <span class="o">-</span><span class="nv">a</span> <span class="ss">(</span><span class="nv">all</span> <span class="nv">files</span><span class="ss">)</span> <span class="nv">option</span>
+<span class="nv">ls</span> <span class="o">-</span><span class="nv">lha</span>
+</code></pre></div>
+
+<h3 id="20-man">20. man<a class="headerlink" href="#20-man" title="Permanent link">&para;</a></h3>
+<p>The man command displays the “man pages” for a command in less . The man pages are the user manual for that command. Because man uses less to display the man pages, you can use the search capabilities of less.</p>
+<p>For example, to see the man pages for chown, use the following command:</p>
+<div class="codehilite"><pre><span></span><code>man chown
+</code></pre></div>
+
+<h3 id="21-tree">21. tree<a class="headerlink" href="#21-tree" title="Permanent link">&para;</a></h3>
+<p>tree is a recursive directory listing program that produces a depth-indented listing of files.</p>
+<p>```
+ # If you are using Apple OS X, type:
+ brew install tree</p>
+<p># Display the tree hierarchy of a directory
+ tree -a ./GFG</p>
+<p>## list files with their permissions
+ tree -p ./GFG </p>
+<p>```</p>
+<h3 id="22-mkdir">22. mkdir<a class="headerlink" href="#22-mkdir" title="Permanent link">&para;</a></h3>
+<p>The mkdir command allows you to create new directories in the filesystem. </p>
+<div class="codehilite"><pre><span></span><code>mkdir invoces
+
+mkdir -p quotes/yearly/2019
+</code></pre></div>
+
+<h3 id="23-mv">23. mv<a class="headerlink" href="#23-mv" title="Permanent link">&para;</a></h3>
+<p>The mv command allows you to move files and directories from directory to directory. It also allows you to rename files.</p>
+<div class="codehilite"><pre><span></span><code>mv ~/Documents/Ukulele/Apache.pdf .
+
+# rename file
+mv Apache.pdf The_Shadows_Apache.pdf
+</code></pre></div>
+
+<h3 id="24-passwd">24. passwd<a class="headerlink" href="#24-passwd" title="Permanent link">&para;</a></h3>
+<p>The passwd command lets you change the password for a user. Just type passwd to change your own password.</p>
+<div class="codehilite"><pre><span></span><code>sudo passwd mary
+</code></pre></div>
+
+<h3 id="25-ping">25. ping<a class="headerlink" href="#25-ping" title="Permanent link">&para;</a></h3>
+<p>The ping command lets you verify that you have network connectivity with another network device.</p>
+<div class="codehilite"><pre><span></span><code><span class="nv">ping</span> <span class="mi">192</span>.<span class="mi">168</span>.<span class="mi">4</span>.<span class="mi">18</span>
+
+# <span class="nv">ping</span> <span class="nv">to</span> <span class="nv">run</span> <span class="k">for</span> <span class="nv">a</span> <span class="nv">specific</span> <span class="nv">number</span> <span class="nv">of</span> <span class="nv">ping</span> <span class="nv">attempts</span>, <span class="nv">use</span> <span class="nv">the</span> <span class="o">-</span><span class="nv">c</span> <span class="ss">(</span><span class="nv">count</span><span class="ss">)</span> <span class="nv">option</span>
+<span class="nv">ping</span> <span class="o">-</span><span class="nv">c</span> <span class="mi">5</span> <span class="mi">192</span>.<span class="mi">168</span>.<span class="mi">4</span>.<span class="mi">18</span>
+
+# <span class="nv">To</span> <span class="nv">hear</span> <span class="nv">a</span> <span class="nv">ping</span> <span class="nv">use</span> <span class="nv">the</span> <span class="o">-</span><span class="nv">a</span><span class="ss">(</span><span class="nv">audible</span><span class="ss">)</span> <span class="nv">option</span>.
+<span class="nv">ping</span> <span class="o">-</span><span class="nv">a</span> <span class="mi">192</span>.<span class="mi">168</span>.<span class="mi">4</span>.<span class="mi">18</span>
+</code></pre></div>
+
+<h3 id="26-ps">26. ps<a class="headerlink" href="#26-ps" title="Permanent link">&para;</a></h3>
+<p>The ps command lists running processes. Using ps without any options causes it to list the processes running in the current shell.</p>
+<div class="codehilite"><pre><span></span><code>ps
+
+# to see all the processes related to a particular user
+ps -u dave | less
+
+# To see every process that is running, use the -e( every process)
+ps -e | less
+
+#  Shows User, All Processes and Terminal Information
+ps aux
+</code></pre></div>
+
+<h3 id="27-pwd">27. pwd<a class="headerlink" href="#27-pwd" title="Permanent link">&para;</a></h3>
+<p>Nice and simple, the pwd command prints the working directory (the current directory) from the root / directory.</p>
+<div class="codehilite"><pre><span></span><code>pwd
+</code></pre></div>
+
+<h3 id="28-shutdown">28. shutdown<a class="headerlink" href="#28-shutdown" title="Permanent link">&para;</a></h3>
+<p>The shutdown command lets you shut down or reboot your Linux system.</p>
+<div class="codehilite"><pre><span></span><code>shutdown
+
+# shut down immediately
+shutdown now
+</code></pre></div>
+
+<h3 id="29-ssh">29. SSH<a class="headerlink" href="#29-ssh" title="Permanent link">&para;</a></h3>
+<p>Use the ssh command to make a connection to a remote Linux computer and log into your account.To make a connection, you must provide your user name and the IP address or domain name of the remote computer.</p>
+<div class="codehilite"><pre><span></span><code><span class="n">ssh</span><span class="w"> </span><span class="n">mary</span><span class="mf">@192.168.4.23</span><span class="w"></span>
+</code></pre></div>
+
+<h3 id="30-sudo">30. sudo<a class="headerlink" href="#30-sudo" title="Permanent link">&para;</a></h3>
+<p>The sudo command is required when performing actions that require root or superuser permissions, such as changing the password for another user.</p>
+<div class="codehilite"><pre><span></span><code>sudo passwd mary
+</code></pre></div>
+
+<h3 id="31-tail">31. tail<a class="headerlink" href="#31-tail" title="Permanent link">&para;</a></h3>
+<p>The tail command gives you a listing of the last 10 lines of a file. If you want to see fewer or more lines, use the -n (number) option.we use tail with its default of 10 lines. We then repeat the command asking for only five lines.</p>
+<div class="codehilite"><pre><span></span><code>tail -n 5 core.c
+</code></pre></div>
+
+<h3 id="32-tar">32. tar<a class="headerlink" href="#32-tar" title="Permanent link">&para;</a></h3>
+<p>With the tar command, you can create an archive file (also called a tarball) that can contain many other files.
+* -c (create) option
+* -v (verbose) option
+* -f (filename) option
+* -z (gzip) option
+* -j(bzip2) option
+* -x (extract)</p>
+<div class="codehilite"><pre><span></span><code>tar -cvf songs.tar Ukulele/
+
+tar -cvzf songs.tar.gz Ukulele/
+
+tar -cvjf songs.tar.bz2 Ukulele/
+
+# extract files
+tar -xvf songs.tar
+
+tar -xvzf songs.tar.gz
+
+tar -xvjf songs.tar.bz2
+</code></pre></div>
+
+<h3 id="33-whoami-or-w">33. whoami or w<a class="headerlink" href="#33-whoami-or-w" title="Permanent link">&para;</a></h3>
+<p>The w command lists the currently logged in users.</p>
+<div class="codehilite"><pre><span></span><code>w
+</code></pre></div>
+
+<p>Use whoami to find out who you are logged in as or who is logged into an unmanned Linux terminal.</p>
+<div class="codehilite"><pre><span></span><code>whoami
+</code></pre></div>
+
+<h3 id="34-top">34. top<a class="headerlink" href="#34-top" title="Permanent link">&para;</a></h3>
+<p>The top command shows you a real-time display of the data relating to your Linux machine. The top of the screen is a status summary. Detail check <a href="https://www.geeksforgeeks.org/top-command-in-linux-with-examples/#:~:text=top%20command%20is%20used%20to,managed%20by%20the%20Linux%20Kernel.">here</a></p>
+<div class="codehilite"><pre><span></span><code>top
+</code></pre></div>
+
+<h3 id="35-uname">35. uname<a class="headerlink" href="#35-uname" title="Permanent link">&para;</a></h3>
+<p>You can obtain some system information regarding the Linux computer you’re working on with the uname command.</p>
+<div class="codehilite"><pre><span></span><code># see everything
+uname -a 
+
+# Use the -s (kernel name) option to see the type of kernel.
+uname -s
+
+# Use the -r (kernel release) option to see the kernel release.
+uname -r
+
+# Use the -v (kernel version) option to see the kernel version.
+uname -v
+</code></pre></div>
+
+<h3 id="36-hostname">36. hostname<a class="headerlink" href="#36-hostname" title="Permanent link">&para;</a></h3>
+<p>hostname used to either display or, with appropriate privileges, set the current host name of the system. The host name is used by many applications to identify the machine.</p>
+<div class="codehilite"><pre><span></span><code>hostname -s 
+</code></pre></div>
+
+<h3 id="37-du">37. du<a class="headerlink" href="#37-du" title="Permanent link">&para;</a></h3>
+<p>The Linux “du” (Disk Usage) is a standard Unix/Linux command, used to check the information of disk usage of files and directories on a machine. </p>
+<div class="codehilite"><pre><span></span><code># Using “-h” option with “du” command provides results in “Human Readable Format“
+du -h /home/tecmint
+
+# To get the summary of a grand total disk usage size of an directory use the option “-s” as follows.
+du -sh /home/tecmint
+
+# Using “-a” flag with “du” command displays the disk usage of all the files and directories.
+du -a /home/tecmint
+</code></pre></div>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../../openshift/openshift-concept/" class="md-footer__link md-footer__link--prev" aria-label="Previous: OpenShift Concept" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              OpenShift Concept
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../docker/" class="md-footer__link md-footer__link--next" aria-label="Next: Docker Command" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Docker Command
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2020 Danny Guo
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.22074ed6.min.js"}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.960e086b.min.js"></script>
+      
+        <script src="../../js/links_in_new_tabs.js"></script>
+      
+    
+  </body>
+</html>

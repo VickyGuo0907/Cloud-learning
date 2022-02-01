@@ -1,0 +1,1084 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Learning Materials">
+      
+      
+        <meta name="author" content="Danny Guo">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.9">
+    
+    
+      
+        <title>Chapter 2 - Cloud Learning Collection Site</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2b4465f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-2-authentication-identity-and-access-management" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Cloud Learning Collection Site" class="md-header__button md-logo" aria-label="Cloud Learning Collection Site" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Cloud Learning Collection Site
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter 2
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/VickyGuo0907/learning-memo/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Cloud Learning Collection Site" class="md-nav__button md-logo" aria-label="Cloud Learning Collection Site" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Cloud Learning Collection Site
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/VickyGuo0907/learning-memo/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Cloud Concept
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Cloud Concept" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Cloud Concept
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cloud/core-concept/" class="md-nav__link">
+        k8s Core
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cloud/ingress-concept/" class="md-nav__link">
+        Ingress
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cloud/probe-concept/" class="md-nav__link">
+        Kubernetes Probe
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          AWS Certified Developer
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="AWS Certified Developer" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          AWS Certified Developer
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Book Home
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter-1/" class="md-nav__link">
+        Chapter 1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Chapter 2
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Chapter 2
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#quiz" class="md-nav__link">
+    QUIZ
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#foundation-topics" class="md-nav__link">
+    Foundation Topics
+  </a>
+  
+    <nav class="md-nav" aria-label="Foundation Topics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#identity-principals-in-iam" class="md-nav__link">
+    IDENTITY PRINCIPALS IN IAM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-keys-secret-keys-and-passwords" class="md-nav__link">
+    Access Keys, Secret Keys, and Passwords
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quiz-answer" class="md-nav__link">
+    Quiz Answer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qa" class="md-nav__link">
+    Q&amp;A
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter-3/" class="md-nav__link">
+        Chapter 3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter-4/" class="md-nav__link">
+        Chapter 4
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials-point/" class="md-nav__link">
+        Tutorials Test
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          AWS Solutions Architecture Certification
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="AWS Solutions Architecture Certification" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          AWS Solutions Architecture Certification
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aws-saa/aws-saa-certification/" class="md-nav__link">
+        Solutions Architecture resource
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          OpenShift
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="OpenShift" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          OpenShift
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../openshift/openshift-concept/" class="md-nav__link">
+        OpenShift Concept
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Useful Command
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Useful Command" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Useful Command
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../useful-command/linux-shell/" class="md-nav__link">
+        Linux Shell
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../useful-command/docker/" class="md-nav__link">
+        Docker Command
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../useful-command/helm/" class="md-nav__link">
+        Helm command
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../useful-command/cloud-command/" class="md-nav__link">
+        Cloud Related Command
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#quiz" class="md-nav__link">
+    QUIZ
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#foundation-topics" class="md-nav__link">
+    Foundation Topics
+  </a>
+  
+    <nav class="md-nav" aria-label="Foundation Topics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#identity-principals-in-iam" class="md-nav__link">
+    IDENTITY PRINCIPALS IN IAM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-keys-secret-keys-and-passwords" class="md-nav__link">
+    Access Keys, Secret Keys, and Passwords
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quiz-answer" class="md-nav__link">
+    Quiz Answer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qa" class="md-nav__link">
+    Q&amp;A
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+<a href="https://github.com/VickyGuo0907/learning-memo/edit/master/docs/aws-acd/chapter-2.md" title="Edit this page" class="md-content__button md-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+</a>
+
+
+<h1 id="chapter-2-authentication-identity-and-access-management">Chapter 2 Authentication, Identity, and Access Management<a class="headerlink" href="#chapter-2-authentication-identity-and-access-management" title="Permanent link">&para;</a></h1>
+<h2 id="quiz">QUIZ<a class="headerlink" href="#quiz" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>When using IAM, to which of the following IAM principles can you assign long-term credentials?</p>
+<ul>
+<li>
+<p>User</p>
+</li>
+<li>
+<p>Group</p>
+</li>
+<li>
+<p>Role</p>
+</li>
+<li>
+<p>Policy</p>
+</li>
+</ul>
+</li>
+<li>
+<p>When delivering federated access to an application, how does the user gain access to AWS services?</p>
+<ul>
+<li>
+<p>Via delegated policy based on the user’s group or pool membership</p>
+</li>
+<li>
+<p>Via role assumption based on the user’s group or pool membership</p>
+</li>
+<li>
+<p>Via federated policy based on the user’s group or pool membership</p>
+</li>
+<li>
+<p>Via shared role based on the user’s group or pool membership</p>
+</li>
+</ul>
+</li>
+<li>
+<p>When assigning strict permissions for accessing S3 to a mobile application, how could you lock down the permissions to exactly one action?</p>
+<ul>
+<li>
+<p>Allow the action in the bucket policy for all users. All other actions are implicitly denied.</p>
+</li>
+<li>
+<p>Allow the action in the bucket policy for all users. Explicitly deny all other actions by using a “Not” condition.</p>
+</li>
+<li>
+<p>Allow the action in the role policy. All other actions are implicitly denied.</p>
+</li>
+<li>
+<p>Allow the action in the role policy. Explicitly deny all other actions by using a “Not” condition.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Encryption in transit can be achieved through which of the following?</p>
+<ul>
+<li>
+<p>TLS</p>
+</li>
+<li>
+<p>Client-side encryption</p>
+</li>
+<li>
+<p>IPsec VPN</p>
+</li>
+<li>
+<p>All of these answers are correct.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>You are writing code for a mobile application. You need to allow the application to access an S3 bucket. What would be the most secure way to access the AWS resource?</p>
+<ul>
+<li>
+<p>Create an ACL and apply it to the bucket. Create a bucket policy that allows the ACL access to the bucket.</p>
+</li>
+<li>
+<p>Create an IdP that authenticates the user of the application and provides it with a role. Create a bucket policy that allows the role access to the bucket.</p>
+</li>
+<li>
+<p>Create an IdP that authenticates the user of the application and provides it with a role. Create an IAM policy with access to S3 and attach it to the role.</p>
+</li>
+<li>
+<p>Authenticate the user of the application through IAM and provide it with a role. Create an IAM policy with access to S3 and attach it to the role.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>To allow an application on an EC2 instance to use S3, which of the following is the safest way to distribute credentials?</p>
+<ul>
+<li>
+<p>Using secret access key and access key ID in the ./aws/credentials file</p>
+</li>
+<li>
+<p>Storing credentials in the code</p>
+</li>
+<li>
+<p>Using the environment variables</p>
+</li>
+<li>
+<p>Using a role</p>
+</li>
+</ul>
+</li>
+<li>
+<p>For which of the following can you use IAM? (Choose all that apply.)</p>
+<ul>
+<li>
+<p>Authenticating and authorizing access to the AWS Management Console</p>
+</li>
+<li>
+<p>Authenticating and authorizing access to RDS databases</p>
+</li>
+<li>
+<p>Authenticating and authorizing access to EC2 operating systems</p>
+</li>
+<li>
+<p>All of the above</p>
+</li>
+</ul>
+</li>
+<li>
+<p>What is the maximum number of IAM users?</p>
+<ul>
+<li>
+<p>Unlimited</p>
+</li>
+<li>
+<p>10,000</p>
+</li>
+<li>
+<p>5000</p>
+</li>
+<li>
+<p>50,000</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Which service encrypts all data at rest by default?</p>
+<ul>
+<li>
+<p>S3</p>
+</li>
+<li>
+<p>RDS</p>
+</li>
+<li>
+<p>Glacier</p>
+</li>
+<li>
+<p>SQS</p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="foundation-topics">Foundation Topics<a class="headerlink" href="#foundation-topics" title="Permanent link">&para;</a></h2>
+<h3 id="identity-principals-in-iam">IDENTITY PRINCIPALS IN IAM<a class="headerlink" href="#identity-principals-in-iam" title="Permanent link">&para;</a></h3>
+<p>Two types of actions can be allowed over AWS resources via a policy:</p>
+<ul>
+<li>
+<p><strong>Management of AWS resources</strong>: This type of permission allows users to read the state or change and delete resources created in AWS. For example, a user might have permissions to create and manage S3 buckets, change configurations, and delete configurations. Management permissions can be granted over any AWS service.</p>
+</li>
+<li>
+<p><strong>Access to the contents of an AWS resource</strong>: This type of permission can allow access to the content held in an AWS resource through IAM authentication and authorization. With it, you can allow access to the contents of a database or a storage layer, access to post or read from a service, and so on. For example, you can allow a user to create, update, or read items in a DynamoDB database. Access permissions are not available for all AWS resources because some of the resources cannot be IAM integrated. An example of a resource where access permissions cannot be granted is an EC2 instance operating system.</p>
+</li>
+</ul>
+<p><img alt="zoomify" src="../imgs/figure2-2.png" /><br></br></p>
+<h3 id="access-keys-secret-keys-and-passwords">Access Keys, Secret Keys, and Passwords<a class="headerlink" href="#access-keys-secret-keys-and-passwords" title="Permanent link">&para;</a></h3>
+<p>Two types of credentials can be created for a user:</p>
+<ul>
+<li>
+<p><strong>Password</strong>: In combination with a username and an account ID, a password can be used to authenticate against the AWS Management Console. If the user requires access to the console to manage resources from the AWS GUI, a password should be assigned to the user. Once a user is authenticated, a temporary token is generated that is used by the web interface so that the user does not need to continuously enter the username and password for each and every request.</p>
+</li>
+<li>
+<p><strong>Access key ID and secret access key</strong>: This pair of credentials allows for direct access to the AWS APIs or use of the AWS CLI and the AWS SDKs to perform actions against AWS resources. These two credentials can be used to call up AWS resources and sign each request being sent to the API. When using the CLI and SDKs, the signing of each request to the AWS APIs is built in.</p>
+</li>
+</ul>
+<h2 id="quiz-answer">Quiz Answer<a class="headerlink" href="#quiz-answer" title="Permanent link">&para;</a></h2>
+<ol>
+<li>A.User</li>
+<li>B.Via role assumption based on the user’s group or pool membership</li>
+<li>D. Allow the action in the role policy. Explicitly deny all other actions by using a “Not” condition.</li>
+<li>D. All of these answers are correct</li>
+<li>B. Create an IdP that authenticates the user of the application and provides it with a role. Create a bucket policy that allows the role access to the bucket.</li>
+<li>D. Using a role</li>
+<li>A. Authenticating and authorizing access to the AWS Management Console
+   B. Authenticating and authorizing access to RDS databases</li>
+<li>C. 5000</li>
+<li>C. Glacier</li>
+<li>A. Users</li>
+</ol>
+<h2 id="qa">Q&amp;A<a class="headerlink" href="#qa" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>True or false: An AWS user can have both a username and password and one or two secret keys and access key IDs assigned. 
+<strong>Answer</strong>: True</p>
+</li>
+<li>
+<p>What security principal does not have credentials directly assigned to it?
+<strong>Answer</strong>: An IAM Group</p>
+</li>
+<li>
+<p>Complete this sentence: <strong>An IAM Role</strong> can be assigned to an AWS service to allow it to access other AWS services.</p>
+</li>
+<li>
+<p>If a user is a member of a group that denies that user access to S3, can you grant access to a specific bucket by 
+assigning an inline policy to the user?
+<strong>Answer</strong>: No. All policies combine with a logical AND. A deny in one policy will take precedence over any allow.</p>
+</li>
+<li>
+<p>What is a web identity?
+<strong>Answer</strong>: An external directory accessible on the web</p>
+</li>
+<li>
+<p>When federating IAM with an IDP, how are permissions granted to the user?
+<strong>Answer</strong>: THrough a role that is tied to the idenity of the user by group or pool membership</p>
+</li>
+<li>
+<p>Complete this sentence: One of the benefits of federation with IAM is that you can support <strong>an unlimited number</strong> any number of users.</p>
+</li>
+<li>
+<p>True or false: By default, a Lambda function can access all the resources within your AWS account in an unrestricted manner.
+<strong>Answer</strong>:False. Lambda needs to be granted permissions to access AWS resources within your account</p>
+</li>
+<li>
+<p>What types of encryption would you recommend for a MySQL database when end-to-end encryption is required?
+<strong>Answer</strong>: Encryption in transit via TLS and encryption of data at rest via data volume encryption</p>
+</li>
+<li>
+<p>When connecting to an EC2 instance in AWS, what encryption options would you be able to use?
+<strong>Answer</strong>: Client-side encryption; encryption of traffic with SSL, TLS and so on; and a VPN would all provide encryption between the client and
+the EC2 instance. </p>
+</li>
+</ol>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../chapter-1/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Chapter 1" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Chapter 1
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../chapter-3/" class="md-footer__link md-footer__link--next" aria-label="Next: Chapter 3" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Chapter 3
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2020 Danny Guo
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.22074ed6.min.js"}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.960e086b.min.js"></script>
+      
+        <script src="../../js/links_in_new_tabs.js"></script>
+      
+    
+  </body>
+</html>
